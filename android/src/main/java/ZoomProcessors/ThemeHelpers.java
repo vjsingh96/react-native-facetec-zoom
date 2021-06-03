@@ -2,15 +2,15 @@ package ZoomProcessors;
 
 import android.graphics.Color;
 
-//import com.facetec.zoom.sampleapp.R;
-import com.facetec.zoom.sdk.ZoomCustomization;
-import com.facetec.zoom.sdk.ZoomSDK;
+import com.facetec.sdk.FaceTecCustomization;
+import com.facetec.sdk.FaceTecSDK;
+
 
 public class ThemeHelpers {
 
     public static void setAppTheme(String theme) {
         if(theme.equals("ZoOm Theme")) {
-            ZoomGlobalState.currentCustomization = new ZoomCustomization();
+            ZoomGlobalState.currentCustomization = new FaceTecCustomization();
         }
         else if(theme.equals("Well-Rounded")) {
             int primaryColor = Color.parseColor("#09B5A3"); // green
@@ -373,6 +373,6 @@ public class ThemeHelpers {
             // ZoomGlobalState.currentCustomization.getCancelButtonCustomization().customImageLowLight = R.drawable.cancel_navy;
         }
 
-        ZoomSDK.setCustomization(ZoomGlobalState.currentCustomization);
+        FaceTecSDK.setCustomization(ZoomGlobalState.currentCustomization);
     }
 }

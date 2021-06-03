@@ -1,7 +1,0 @@
-rootProject.name = 'rnzoomexample'
-include ':react-native-image-store'
-project(':react-native-image-store').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-store/android')
-include ':react-native-facetec-zoom'
-project(':react-native-facetec-zoom').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-facetec-zoom/android')
-
-include ':app'

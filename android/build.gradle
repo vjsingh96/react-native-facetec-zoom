@@ -62,7 +62,8 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$supportLibVersion"
     // implementation "com.facetec:zoom-authentication-hybrid:$zoomSdkVersion"
     implementation project(':react-native-image-store')
-    implementation files('zoom-authentication-8.1.1.aar')
+//    implementation files('zoom-authentication-8.1.1.aar')
+    implementation files('facetec-sdk-9.2.2.aar')
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 }
 

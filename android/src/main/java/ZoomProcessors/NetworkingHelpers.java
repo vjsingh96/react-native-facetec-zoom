@@ -3,6 +3,8 @@ package ZoomProcessors;
 
 import android.os.Build;
 
+import androidx.annotation.NonNull;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetAddress;
@@ -119,7 +121,7 @@ class ProgressRequestBody extends RequestBody {
         }
 
         @Override
-        public void write(byte[] b, int off, int len) throws IOException {
+        public void write(@NonNull byte[] b, int off, int len) throws IOException {
             this.stream.write(b, off, len);
             if(len < b.length) {
                 this.bytesSent += len;

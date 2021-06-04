@@ -5,6 +5,9 @@ package ZoomProcessors;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -99,7 +102,7 @@ public class LivenessCheckProcessor extends Processor implements FaceTecFaceScan
 
         NetworkingHelpers.getApiClient().newCall(request).enqueue(new Callback() {
             @Override
-            public void onResponse(Call call, okhttp3.Response response) throws IOException {
+            public void onResponse(@NonNull Call call, @NonNull okhttp3.Response response) throws IOException {
                 String responseString = response.body().string();
                 response.body().close();
                 try {
@@ -132,7 +135,7 @@ public class LivenessCheckProcessor extends Processor implements FaceTecFaceScan
             }
 
             @Override
-            public void onFailure(Call call,IOException e) {
+            public void onFailure(@NonNull Call call, @Nullable IOException e) {
                 // CASE:  Network Request itself is erroring --> You define your own API contracts with yourself and may choose to do something different here based on the error.
                 Log.d("FaceTecSDKSampleApp", "Exception raised while attempting HTTPS call.");
                 faceTecFaceScanResultCallback.cancel();
